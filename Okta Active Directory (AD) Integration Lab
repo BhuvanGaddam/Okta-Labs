@@ -1,0 +1,206 @@
+# Okta Active Directory (AD) Integration Lab
+
+## Objective
+
+Integrate Microsoft Active Directory (AD) with Okta for centralized authentication, user synchronization, and delegated authentication.
+
+---
+
+## Prerequisites
+
+- Windows Server with Active Directory
+- Okta Admin Account
+- Internet Connectivity
+- Test Users in AD
+- Domain Admin Access
+
+---
+
+## Step 1: Prepare Active Directory
+
+### Open Active Directory Users and Computers
+
+Navigate to:
+
+`Start Menu → Administrative Tools → Active Directory Users and Computers`
+
+### Create Organizational Unit
+
+Create a new OU named:
+
+`Okta-Lab`
+
+### Create Test Users
+
+Example users:
+
+- John Doe
+- Jane Smith
+- Test User
+
+### Create Security Group
+
+Create group:
+
+`Okta-Users`
+
+Add all test users to the group.
+
+---
+
+## Step 2: Login to Okta Admin Console
+
+Open:
+
+`https://yourdomain.okta.com/admin`
+
+Login using administrator credentials.
+
+---
+
+## Step 3: Configure Active Directory Integration
+
+Navigate to:
+
+`Directory → Directory Integrations`
+
+Click:
+
+`Add Active Directory`
+
+---
+
+## Step 4: Download Okta AD Agent
+
+1. Click `Set Up Active Directory`
+2. Download the Okta AD Agent
+3. Copy installer to Windows Server
+
+---
+
+## Step 5: Install Okta AD Agent
+
+### Installation Steps
+
+1. Run installer as Administrator
+2. Accept License Agreement
+3. Enter Okta URL
+4. Authenticate with Okta Admin credentials
+5. Complete installation
+
+Example Okta URL:
+
+`https://company.okta.com`
+
+---
+
+## Step 6: Configure AD Settings
+
+### Select Organizational Unit
+
+Select:
+
+`Okta-Lab`
+
+### Enable Features
+
+Enable:
+
+- Incremental Imports
+- Scheduled Imports
+- Delegated Authentication
+
+Save configuration.
+
+---
+
+## Step 7: Import Users
+
+Navigate to:
+
+`Directory → Directory Integrations`
+
+Click:
+
+`Import Now`
+
+Verify imported users under:
+
+`Directory → People`
+
+---
+
+## Step 8: Import Groups
+
+Navigate to:
+
+`Directory → Groups`
+
+Verify group:
+
+`Okta-Users`
+
+---
+
+## Step 9: Assign Applications
+
+Navigate to:
+
+`Applications → Applications`
+
+Assign imported AD users to applications.
+
+---
+
+## Step 10: Test Authentication
+
+Open Okta Dashboard:
+
+`https://yourdomain.okta.com`
+
+Login using AD credentials and verify successful authentication.
+
+---
+
+## Troubleshooting
+
+### Agent Offline
+
+- Verify internet connectivity
+- Check firewall settings
+- Verify Windows service status
+
+### Users Not Importing
+
+- Verify OU selection
+- Check permissions
+- Verify import settings
+
+### Authentication Failure
+
+- Verify delegated authentication enabled
+- Check credentials
+- Verify domain controller connectivity
+
+---
+
+## Skills Demonstrated
+
+- Okta Administration
+- Active Directory Integration
+- User Provisioning
+- Delegated Authentication
+- IAM Operations
+- Hybrid Identity Management
+
+---
+
+## Reference Documentation
+
+https://learn.toppershill.com/external/manual/okta-2024/article/ad-integration-lab?p=763889e44c68ae69440902722f0601ea16176ff913c32c11937ba9101597e8a4
+
+---
+
+## Author
+
+Bhuvan Gaddam
